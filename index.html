@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Verificación obligatoria para Monetag -->
-    <meta name="monetag" content="9c1ef2efca0d247d51edb0d194d22a34">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga para Smart TV</title>
+    <title>APK Hub - Smart TV</title>
     <style>
-        body { background-color: #121212; color: white; font-family: Arial, sans-serif; text-align: center; padding-top: 10%; }
-        h1 { font-size: 3rem; }
-        .contador { font-size: 2rem; color: #ff9900; margin: 20px; }
-        .btn-descarga { display: none; font-size: 2.5rem; background-color: #007bff; color: white; padding: 15px 40px; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; }
-        .btn-descarga:focus { background-color: #28a745; outline: 5px solid #fff; }
-        .publicidad { margin: 30px auto; min-height: 250px; width: 100%; max-width: 728px; background: #222; }
+        body { background-color: #121212; color: white; font-family: Arial, sans-serif; text-align: center; padding: 5%; }
+        h1 { font-size: 3rem; color: #ff9900; margin-bottom: 30px; }
+        .grid-apps { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .btn-app { 
+            display: block; 
+            width: 100%; 
+            font-size: 2.2rem; 
+            background-color: #222; 
+            color: white; 
+            padding: 20px; 
+            border: 3px solid #444; 
+            border-radius: 15px; 
+            text-decoration: none; 
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+        /* Esto es vital para que resalte al usar las flechas del control de la TV */
+        .btn-app:focus { 
+            background-color: #28a745; 
+            border-color: #fff; 
+            transform: scale(1.05); 
+            outline: none; 
+        }
     </style>
 </head>
 <body>
 
-    <h1>Tu descarga estará lista en breve...</h1>
+    <h1>Selecciona una Aplicación</h1>
     
-    <!-- ZONA DE PUBLICIDAD -->
-    <div class="publicidad">
-        <script>(function(s){s.dataset.zone='11178893',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-        <script>(function(s){s.dataset.zone='11177965',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <div class="grid-apps">
+        <!-- Puedes duplicar estas líneas para agregar todas las apps que quieras -->
+        <a href="./app1/" class="btn-app">📺 DESCARGAR APP DE PELÍCULAS</a>
+        <a href="./app2/" class="btn-app">⚽ DESCARGAR APP DE DEPORTES</a>
+        <a href="./app3/" class="btn-app">🚀 DESCARGAR OPTIMIZADOR TV</a>
     </div>
 
-    <div class="contador" id="tiempo">Esperando 10 segundos...</div>
-    
-    <!-- REEMPLAZA CON TU ENLACE REAL DE MEDIAFIRE -->
-    <a href="https://www.mediafire.com/file/0xjxwtrnthx5yhw/XuperArg_4.34.4_emagoplay.apk/file" class="btn-descarga" id="boton">DESCARGAR AHORA</a>
-
     <script>
-        let segundos = 10;
-        const textoTiempo = document.getElementById('tiempo');
-        const botonDescarga = document.getElementById('boton');
-
-        const cuentaAtras = setInterval(() => {
-            segundos--;
-            textoTiempo.textContent = `Esperando ${segundos} segundos...`;
-            
-            if (segundos <= 0) {
-                clearInterval(cuentaAtras);
-                textoTiempo.style.display = 'none';
-                botonDescarga.style.display = 'inline-block';
-                botonDescarga.focus();
-            }
-        }, 1000);
+        // Auto-enfoca la primera opción al cargar para comodidad en Smart TV
+        document.querySelector('.btn-app').focus();
     </script>
 </body>
 </html>
