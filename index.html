@@ -8,24 +8,39 @@
         body { background-color: #121212; color: white; font-family: Arial, sans-serif; text-align: center; padding: 5%; }
         h1 { font-size: 3rem; color: #ff9900; margin-bottom: 30px; }
         .grid-apps { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 600px; margin: 0 auto; }
+        
+        /* Botón estilo tarjeta moderna */
         .btn-app { 
-            display: block; 
+            display: flex; 
+            align-items: center; /* Alinea verticalmente la imagen y el texto */
             width: 100%; 
-            font-size: 2.2rem; 
+            font-size: 2rem; 
             background-color: #222; 
             color: white; 
-            padding: 20px; 
+            padding: 15px 25px; 
             border: 3px solid #444; 
             border-radius: 15px; 
             text-decoration: none; 
             box-sizing: border-box;
             transition: 0.2s;
+            text-align: left; /* Texto alineado a la izquierda al lado del logo */
         }
-        /* Esto es vital para que resalte al usar las flechas del control de la TV */
+        
+        /* Estilo para las imágenes dentro de los botones */
+        .img-app {
+            width: 60px; /* Tamaño ideal para que se vea bien en TV */
+            height: 60px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px; /* Separa la imagen del texto */
+            background-color: #333; /* Fondo por si la imagen tarda en cargar */
+        }
+
+        /* Efecto visual al navegar con el control de la TV */
         .btn-app:focus { 
             background-color: #28a745; 
             border-color: #fff; 
-            transform: scale(1.05); 
+            transform: scale(1.04); 
             outline: none; 
         }
     </style>
@@ -35,10 +50,23 @@
     <h1>Selecciona una Aplicación</h1>
     
     <div class="grid-apps">
-        <!-- Puedes duplicar estas líneas para agregar todas las apps que quieras -->
-        <a href="./app1/" class="btn-app">📺 DESCARGAR APP XUPER.AR</a>
-        <a href="./app2/" class="btn-app">📺 DESCARGAR APP XUPER.HIDRA</a>
-        <a href="./app3/" class="btn-app">📱 DESCARGAR APP XUPER. MOD CELULAR</a>
+        <!-- BOTÓN 1 -->
+        <a href="./app1/" class="btn-app">
+            <img src="./logo-cine.png" alt="Icono Cine" class="img-app">
+            <span>📺 DESCARGAR APP DE PELÍCULAS</span>
+        </a>
+        
+        <!-- BOTÓN 2 -->
+        <a href="./app2/" class="btn-app">
+            <img src="./logo-deportes.png" alt="Icono Deportes" class="img-app">
+            <span>⚽ DESCARGAR APP DE DEPORTES</span>
+        </a>
+        
+        <!-- BOTÓN 3 -->
+        <a href="./app3/" class="btn-app">
+            <img src="./logo-optimizador.png" alt="Icono Optimizador" class="img-app">
+            <span>🚀 DESCARGAR OPTIMIZADOR TV</span>
+        </a>
     </div>
 
     <script>
